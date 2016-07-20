@@ -1,0 +1,22 @@
+<%= form_for @post do |p| %>
+	<% if @post.errors.any? %>
+		<h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+		<ul><% @post.errors.full_message.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= p.label :title %> <br>
+	<%= p.text_field :title %>
+
+	<br><br>
+
+	<%= p.label :content %> <br>
+	<%= p.text_area :content %>
+
+	<br><br>
+
+	<%= p.submit %>
+
+<% end %>
