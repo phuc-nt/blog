@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+	<meta charset="UTF-8">
+    <title>phucnt's blog</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header id="main_navigation" class="clearfix">
+        <a href="index.html" class="name">phucnt</a>
+        <nav>
+            <a href="articles.html">Articles</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
 <%= yield %>
 
+    <footer id="main_footer">
+        <p class="copyright">© 2016 phucnt</p>
+        <nav id="link">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </nav>
+    </footer>
 </body>
 </html>
