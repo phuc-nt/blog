@@ -10,9 +10,9 @@
 </head>
 <body>
 	<header id="main_navigation" class="clearfix">
-        <a href="index.html" class="name">phucnt</a>
+        <%= link_to "phucnt", root_path,  class: "name" %>
         <nav>
-            <a href="articles.html">Articles</a>
+            <%= link_to "Articles", posts_path %>
             <a href="#">Projects</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -23,9 +23,9 @@
     <footer id="main_footer">
         <p class="copyright">© 2016 phucnt</p>
         <nav id="link">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.facebook.com/phucnt176" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://github.com/phuc-nt" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://www.instagram.com/i.shoot.film" target="_blank"><i class="fa fa-instagram"></i></a>
         </nav>
     </footer>
 </body>
