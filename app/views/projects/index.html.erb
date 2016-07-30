@@ -1,0 +1,16 @@
+<h1 id="page_title">Stuff I've Built</h1>
+<div id="post_wrapper" class="skinny_wrapper">
+    <% @projects.each do |project| %>
+        <div class="post">
+			<p class="date"><%= project.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+			<h2><a href="#"><%= link_to project.title, project %></a></h2>
+            <hr>
+    	</div>
+	<% end %>
+</div>
+<div class="pagination">
+    <!-- <span class="previous_page disabled">Previous</span>
+    <em class="current">1</em>
+    <a rel="next" href="#">2</a>
+    <a class="next_page" href="#">Next</a> -->
+</div>
