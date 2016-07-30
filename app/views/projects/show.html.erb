@@ -22,7 +22,7 @@
         <a href="http://twitter.com/share?text=<%= @project.title %> by@phuc-nt : &amp;url=<%= url_for([@project, {only_path: false}]) %>" onclick="window.open(this.href, '_blank','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-twitter"></i></a>
     </div>
 
-    <%= link_to "Edit", edit_project_path(@project) %>
+    <%= link_to "Sửa", edit_project_path(@project) %>
 	<%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure"} %>
     
     <hr>
