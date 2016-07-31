@@ -18,7 +18,13 @@
         </nav>
     </header>
 
-<%= yield %>
+    <% if notice %>
+        <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+    <% end %>
+    
+    <%= yield %>
 
     <footer id="main_footer">
         <p class="copyright">© 2016 phucnt</p>
