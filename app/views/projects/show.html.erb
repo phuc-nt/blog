@@ -8,9 +8,17 @@
     <div id="content">
         <%= markdown @project.description%>
     </div>
+
     <div class="button_wrapper">
         <a href="<%= @project.link%>" class="project_button" target="_blank">Visit <%= @project.title%></a>
     </div>
+
+    <% if user_signed_in? %>
+        <div id="admin_link">
+            <%= link_to "Edit", edit_project_path(@project) %>
+            <%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure"} %>
+        </div>
+    <% end %>
     <hr>
     <div id="share_box">
         <p>Share</p>
@@ -21,9 +29,6 @@
 
         <a href="http://twitter.com/share?text=<%= @project.title %> by@phuc-nt : &amp;url=<%= url_for([@project, {only_path: false}]) %>" onclick="window.open(this.href, '_blank','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-twitter"></i></a>
     </div>
-
-    <%= link_to "Sửa", edit_project_path(@project) %>
-	<%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure"} %>
     
     <hr>
 

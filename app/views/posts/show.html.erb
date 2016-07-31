@@ -9,6 +9,13 @@
         <%= markdown @post.content%>
     </div>
 
+    <% if user_signed_in? %>
+        <div id="admin_link">
+            <%= link_to "Edit", edit_post_path(@post) %>
+            <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure"} %>
+        </div>
+    <% end %>
+
     <hr>
     <div id="share_box">
         <p>Share</p>
@@ -19,9 +26,6 @@
 
         <a href="http://twitter.com/share?text=<%= @post.title %> by@phuc-nt : &amp;url=<%= url_for([@post, {only_path: false}]) %>" onclick="window.open(this.href, '_blank','left=50,top=50,width=600,height=350,toolbar=0'); return false;"><i class="fa fa-twitter"></i></a>
     </div>
-
-    <%= link_to "Edit", edit_post_path(@post) %>
-	<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure"} %>
     
     <hr>
 
